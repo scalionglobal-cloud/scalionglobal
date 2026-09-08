@@ -13,10 +13,10 @@ const ContactForm = () => {
     setLoading(true);
 
     emailjs.sendForm(
-      "service_g5ozqin",
-      "template_47yhdn7",
+      "service_socr3kc",
+      "template_aozquqq",
       form.current,
-      "tZjTtEnVsQMx0UNXT"
+      "ma6f1G8xKopMd_Ix0"
     )
       .then(
         () => {
