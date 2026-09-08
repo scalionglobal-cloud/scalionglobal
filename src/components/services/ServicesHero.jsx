@@ -6,7 +6,7 @@ import Amazon from "../../assets/logos/amazon.png";
 import Walmart from "../../assets/logos/walmart.png";
 import Shopify from "../../assets/logos/shopify.png";
 import Ebay from "../../assets/logos/ebay.png";
-import Etsy from "../../assets/logos/etsy.png";
+import Etsy from "../../assets/logos/Etsy.png";
 import Alibaba from "../../assets/logos/alibaba.png";
 import Flipkart from "../../assets/logos/flipkart.png";
 import Noon from "../../assets/logos/noon.png";
