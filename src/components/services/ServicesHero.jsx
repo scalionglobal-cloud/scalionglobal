@@ -93,10 +93,10 @@ const ServicesHero = () => {
 
             <div className="flex flex-wrap gap-4 mt-10">
             <Link
-              to="/contact"
+              to="/pricing"
               className="inline-flex items-center justify-center bg-[#C9A45C] text-[#071B3B] px-8 py-4 rounded-full font-semibold hover:bg-[#d6b36f] transition-all duration-300 shadow-lg"
             >
-              Talk to Our Experts
+              View Pricing Plans
             </Link>
 
             </div>
