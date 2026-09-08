@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #04142d;
+  padding: 18px 0;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 20s linear infinite;
+}
+
+.marquee-content span {
+  color: white;           /* IMPORTANT */
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 60px;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
+@keyframes orbitClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitAntiClockwise {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.orbit-clockwise {
+  animation: orbitClockwise 40s linear infinite;
+  transform-origin: center;
+}
+
+.orbit-anticlockwise {
+  animation: orbitAntiClockwise 55s linear infinite;
+  transform-origin: center;
+}
+
+.pricing-grid:hover .pricing-card {
+  transform: translateY(12px);
+}
+
+.pricing-grid .pricing-card:hover {
+  transform: translateY(-20px) scale(1.03);
+  z-index: 20;
+}
+
+.pricing-card {
+  transition: all 0.5s ease;
+}
