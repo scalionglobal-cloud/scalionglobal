@@ -42,56 +42,59 @@ const FAQPricing = () => {
   };
 
   return (
-    <section className="py-32 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-16 md:py-32 bg-white">
+      <div className="max-w-5xl mx-auto px-4 md:px-6">
 
-        <div className="text-center mb-16">
-          <span className="uppercase tracking-[4px] text-[#C9A45C] text-sm font-semibold">
+        {/* Header */}
+        <div className="text-center mb-10 md:mb-16">
+
+          <span className="text-[#C9A45C] text-sm md:text-2xl font-bold uppercase tracking-[2px] md:tracking-[3px]">
             Frequently Asked Questions
           </span>
 
-          <h2 className="mt-5 text-5xl font-bold text-[#0A2540]">
+          <h2 className="mt-3 text-3xl md:text-5xl font-bold text-[#0A2540]">
             Everything You Need To Know
           </h2>
 
-          <p className="mt-6 text-gray-600 text-lg">
+          <p className="mt-3 text-sm md:text-lg text-gray-600">
             Have questions? We've got answers.
           </p>
+
         </div>
 
-        <div className="space-y-5">
+        {/* FAQ List */}
+        <div className="space-y-3 md:space-y-5">
 
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-[#F8FAFC] rounded-3xl overflow-hidden border border-gray-100"
+              className="bg-[#F8FAFC] rounded-2xl md:rounded-3xl overflow-hidden border border-gray-100"
             >
 
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-7 text-left"
+                className="w-full flex items-center justify-between p-4 md:p-7 text-left"
               >
-                <h3 className="text-lg font-semibold text-[#0A2540]">
+                <h3 className="text-sm md:text-lg font-semibold text-[#0A2540] pr-3">
                   {faq.question}
                 </h3>
 
-                <div className="text-[#0A2540]">
+                <div className="text-[#0A2540] shrink-0">
                   {active === index ? (
-                    <Minus size={22} />
+                    <Minus size={18} />
                   ) : (
-                    <Plus size={22} />
+                    <Plus size={18} />
                   )}
                 </div>
               </button>
-
-              <div
+                            <div
                 className={`transition-all duration-500 overflow-hidden ${
                   active === index
-                    ? "max-h-40 pb-7 px-7"
+                    ? "max-h-48 pb-4 md:pb-7 px-4 md:px-7"
                     : "max-h-0"
                 }`}
               >
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                   {faq.answer}
                 </p>
               </div>

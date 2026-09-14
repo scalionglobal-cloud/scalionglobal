@@ -1,3 +1,5 @@
+import React from "react";
+
 const steps = [
   {
     number: "01",
@@ -33,24 +35,23 @@ const steps = [
 
 const GrowthPhilosophy = () => {
   return (
-    <section className="py-32 bg-[#F8FAFC] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="hidden lg:block py-32 bg-[#F8FAFC] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
         {/* Header */}
-
         <div className="text-center max-w-4xl mx-auto">
 
-          <span className="uppercase tracking-[4px] text-[#C9A45C] text-sm font-semibold">
+          <span className="text-[#C9A45C] text-sm md:text-2xl font-bold uppercase tracking-[3px]">
             Our Philosophy
           </span>
 
-          <h2 className="mt-6 text-4xl md:text-6xl font-bold text-[#0A2540]">
+          <h2 className="mt-4 md:mt-6 text-3xl md:text-6xl font-bold text-[#0A2540] leading-tight">
             A Proven Framework
             <br />
             For Sustainable Growth.
           </h2>
 
-          <p className="mt-8 text-lg text-gray-600">
+          <p className="mt-6 md:mt-8 text-base md:text-lg text-gray-600">
             Every successful partnership follows a structured
             approach focused on clarity, execution, and measurable results.
           </p>
@@ -58,31 +59,53 @@ const GrowthPhilosophy = () => {
         </div>
 
         {/* Timeline */}
+        <div className="mt-16 md:mt-24 relative">
 
-        <div className="mt-24 relative">
-
-          {/* Center Line */}
-
+          {/* Desktop Horizontal Line */}
           <div className="hidden lg:block absolute top-10 left-0 w-full h-[2px] bg-gray-200"></div>
 
-          <div className="grid lg:grid-cols-5 gap-10">
+          {/* Mobile Horizontal Scroll */}
+          <div className="lg:hidden overflow-x-auto scrollbar-hide pb-4">
+            <div className="flex gap-4 min-w-max relative">
 
+              {/* Mobile Line */}
+              <div className="absolute top-8 left-0 right-0 h-[2px] bg-gray-200"></div>
+
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="relative z-10 w-[180px] flex-shrink-0"
+                >
+                                  {/* Circle */}
+                  <div className="w-16 h-16 mx-auto rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-[#0A2540] font-bold text-sm">
+                    {step.number}
+                  </div>
+
+                  {/* Content */}
+                  <div className="mt-4 text-center bg-white rounded-2xl p-4 shadow-md min-h-[180px]">
+                    <h3 className="text-lg font-bold text-[#0A2540]">
+                      {step.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden lg:grid lg:grid-cols-5 gap-8">
             {steps.map((step, index) => (
-              <div
-                key={index}
-                className="relative group"
-              >
-
-                {/* Circle */}
+              <div key={index} className="relative group">
 
                 <div className="relative z-10 w-20 h-20 mx-auto rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center text-[#0A2540] font-bold text-lg group-hover:bg-[#0A2540] group-hover:text-white transition duration-500">
                   {step.number}
                 </div>
 
-                {/* Content */}
-
                 <div className="mt-8 text-center">
-
                   <h3 className="text-2xl font-bold text-[#0A2540]">
                     {step.title}
                   </h3>
@@ -90,12 +113,10 @@ const GrowthPhilosophy = () => {
                   <p className="mt-4 text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
-
                 </div>
 
               </div>
             ))}
-
           </div>
 
         </div>

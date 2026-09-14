@@ -1,103 +1,40 @@
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
-
-const faqs = [
-  {
-    question: "What marketplaces do you support?",
-    answer:
-      "We support Amazon, Flipkart, Myntra, Ajio, Shopify, Walmart, Etsy and other leading global marketplaces.",
-  },
-  {
-    question: "Can I switch plans later?",
-    answer:
-      "Yes. As your business grows, you can easily upgrade or customize your plan at any time.",
-  },
-  {
-    question: "Do you offer custom solutions?",
-    answer:
-      "Absolutely. Enterprise plans are tailored according to your business requirements and growth goals.",
-  },
-  {
-    question: "How long does onboarding take?",
-    answer:
-      "Most clients are onboarded within 3–7 business days depending on the scope of work.",
-  },
-  {
-    question: "Can you manage my marketplace account completely?",
-    answer:
-      "Yes. Our team can handle everything from listings and catalogs to advertising and account management.",
-  },
-  {
-    question: "Do you support international expansion?",
-    answer:
-      "Yes. We help brands expand into global marketplaces with compliance, logistics, and localization support.",
-  },
-];
-
-const FAQPricing = () => {
-  const [active, setActive] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setActive(active === index ? null : index);
-  };
-
+const PricingCTA = () => {
   return (
-    <section className="py-32 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-24 bg-[#071B3B]">
+      <div className="max-w-5xl mx-auto px-6 text-center">
 
-        <div className="text-center mb-16">
-          <span className="uppercase tracking-[4px] text-[#C9A45C] text-sm font-semibold">
-            Frequently Asked Questions
-          </span>
+        <span className="text-[#C9A45C] text-xl md:text-2xl font-bold uppercase tracking-[3px] mb-4">
+          Ready To Scale?
+        </span>
 
-          <h2 className="mt-5 text-5xl font-bold text-[#0A2540]">
-            Everything You Need To Know
-          </h2>
+        <h2 className="mt-5 text-4xl md:text-5xl font-bold text-white">
+          Let's Grow Your Brand Together
+        </h2>
 
-          <p className="mt-6 text-gray-600 text-lg">
-            Have questions? We've got answers.
-          </p>
-        </div>
+        <p className="mt-6 text-gray-300 text-lg max-w-3xl mx-auto">
+          Whether you're launching your first product or scaling across
+          multiple marketplaces, our experts are ready to help you achieve
+          sustainable growth.
+        </p>
 
-        <div className="space-y-5">
+        <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10">
 
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-[#F8FAFC] rounded-3xl overflow-hidden border border-gray-100"
-            >
+          <a
+            href="https://wa.me/919671513716?text=Hello%20Scalion%20Global,%20I%20would%20like%20to%20discuss%20a%20marketplace%20growth%20plan."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#C9A45C] text-[#071B3B] px-8 py-4 rounded-full font-semibold hover:bg-[#d6b36f] transition-all duration-300 shadow-lg"
+          >
+            Book Free Consultation
+          </a>
 
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-7 text-left"
-              >
-                <h3 className="text-lg font-semibold text-[#0A2540]">
-                  {faq.question}
-                </h3>
-
-                <div className="text-[#0A2540]">
-                  {active === index ? (
-                    <Minus size={22} />
-                  ) : (
-                    <Plus size={22} />
-                  )}
-                </div>
-              </button>
-
-              <div
-                className={`transition-all duration-500 overflow-hidden ${
-                  active === index
-                    ? "max-h-40 pb-7 px-7"
-                    : "max-h-0"
-                }`}
-              >
-                <p className="text-gray-600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-
-            </div>
-          ))}
+          <a
+            href="/brochure.pdf"
+            download
+            className="border-2 border-[#C9A45C] text-[#C9A45C] px-8 py-4 rounded-full font-semibold hover:bg-[#C9A45C] hover:text-[#071B3B] transition-all duration-300"
+          >
+            Download Brochure
+          </a>
 
         </div>
 
@@ -106,4 +43,4 @@ const FAQPricing = () => {
   );
 };
 
-export default FAQPricing;
+export default PricingCTA;

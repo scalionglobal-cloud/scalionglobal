@@ -40,7 +40,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden relative">
+    <section className="hidden lg:block py-32 bg-white overflow-hidden relative">
       {/* Background Shapes */}
       <div className="absolute top-0 left-0 w-96 h-96 rounded-full border border-blue-100 opacity-50 -translate-x-1/2"></div>
 

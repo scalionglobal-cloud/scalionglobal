@@ -22,16 +22,14 @@ const stats = [
 const Stats = () => {
   return (
     <section className="bg-[#071C3C] relative overflow-hidden">
-
+      {/* Background Glow */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute w-[600px] h-[600px] bg-blue-500 rounded-full blur-[150px] -top-60 -left-40"></div>
         <div className="absolute w-[500px] h-[500px] bg-[#D4AF37] rounded-full blur-[180px] -bottom-60 right-0"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-8 py-20">
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
-
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {stats.map((item, index) => (
             <motion.div
               key={index}
@@ -39,19 +37,25 @@ const Stats = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="text-center lg:text-left border-r border-white/10 last:border-none"
+              className="
+                text-center
+                lg:text-left
+                lg:border-r
+                lg:border-white/10
+                lg:last:border-r-0
+                lg:pr-6
+              "
             >
-              <h3 className="text-5xl font-serif text-[#D4AF37]">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#D4AF37]">
                 {item.number}
               </h3>
 
-              <p className="text-white/80 mt-4 text-lg">
+              <p className="text-white/80 mt-3 md:mt-4 text-sm sm:text-base lg:text-lg">
                 {item.label}
               </p>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

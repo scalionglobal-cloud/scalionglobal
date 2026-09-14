@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* =========================
+   GLOBAL
+========================= */
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,7 +12,12 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background: #ffffff;
+  overflow-x: hidden;
 }
+
+/* =========================
+   MARQUEE
+========================= */
 
 .marquee {
   width: 100%;
@@ -24,7 +33,7 @@ body {
 }
 
 .marquee-content span {
-  color: white;           /* IMPORTANT */
+  color: white;
   font-size: 18px;
   font-weight: 600;
   margin-right: 60px;
@@ -41,6 +50,10 @@ body {
     transform: translateX(-50%);
   }
 }
+
+/* =========================
+   FLOAT ANIMATION
+========================= */
 
 @keyframes float {
   0% {
@@ -60,6 +73,10 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+/* =========================
+   SPIN ANIMATION
+========================= */
+
 @keyframes spinSlow {
   from {
     transform: rotate(0deg);
@@ -74,10 +91,15 @@ body {
   animation: spinSlow 40s linear infinite;
 }
 
+/* =========================
+   ORBIT ANIMATIONS
+========================= */
+
 @keyframes orbitClockwise {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -87,6 +109,7 @@ body {
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
@@ -102,6 +125,38 @@ body {
   transform-origin: center;
 }
 
+/* =========================
+   PRICING CARDS
+========================= */
+
+.pricing-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    white
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: all 0.8s ease;
+}
+
+.pricing-card:hover::before {
+  top: -50%;
+  left: -50%;
+}
+
 .pricing-grid:hover .pricing-card {
   transform: translateY(12px);
 }
@@ -109,8 +164,164 @@ body {
 .pricing-grid .pricing-card:hover {
   transform: translateY(-20px) scale(1.03);
   z-index: 20;
+  box-shadow: 0 30px 60px rgba(7, 27, 59, 0.18);
 }
 
-.pricing-card {
-  transition: all 0.5s ease;
+.price-highlight {
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover .price-highlight {
+  transform: scale(1.05);
+}
+
+/* =========================
+   DISCOUNT BADGE
+========================= */
+
+.discount-badge {
+  animation: pulseDiscount 2s infinite;
+}
+
+@keyframes pulseDiscount {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   SAVINGS BADGE
+========================= */
+
+.savings-badge {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.pricing-btn {
+  transition: all 0.3s ease;
+}
+
+.pricing-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(201, 164, 92, 0.35);
+}
+
+/* =========================
+   WHATSAPP FLOAT BUTTON
+========================= */
+
+/* =========================
+   WHATSAPP FLOAT BUTTON
+========================= */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 100px;
+  right: 35px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   FLOATING BUTTON ANIMATION
+========================= */
+
+@keyframes floatingButton {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.08);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.floating-btn {
+  animation: floatingButton 2s ease-in-out infinite;
+}
+
+.floating-btn:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+/* =========================
+   WHATSAPP PULSE EFFECT
+========================= */
+
+@keyframes whatsappPulse {
+  0% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-float-animation {
+  animation: whatsappPulse 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .pricing-grid:hover .pricing-card {
+    transform: none;
+  }
+
+  .pricing-grid .pricing-card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
 }

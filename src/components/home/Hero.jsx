@@ -48,20 +48,21 @@ const Hero = () => {
                 lg:text-[72px]
               "
             >
-              Scaling Brands
+              Scale Your 
               <br />
-              Beyond
+              Brand
               <br />
               <span className="text-[#3559c7]">
-                Boundaries.
+                Internationally.
               </span>
             </h1>
 
             <p className="mt-8 text-gray-600 text-lg leading-8 max-w-xl">
-              Scalion Global helps brands accelerate growth through
-              marketplace management, catalog optimization, logistics,
-              compliance, digital transformation, and intelligent
-              business solutions across international marketplaces.
+                Scalion Global helps brands scale across domestic and international
+                eCommerce marketplaces through marketplace management, catalog
+                optimization, logistics, compliance, digital transformation, and
+                intelligent business solutions.
+            
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-10">

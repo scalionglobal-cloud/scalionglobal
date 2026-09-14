@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import Amazon from "../../assets/logos/amazon.png";
@@ -56,27 +55,27 @@ const platforms = [
 
 const ServicesHero = () => {
   return (
-    <section className="relative overflow-hidden bg-[#0A2A5E] text-white min-h-screen flex items-center">
+    <section className="relative overflow-hidden bg-[#0A2A5E] text-white min-h-[85vh] lg:min-h-screen flex items-center py-24 lg:py-0">
 
-      {/* Background Glow */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0A2A5E] via-[#0B2F69] to-[#082149]" />
 
       <div className="absolute top-20 right-20 w-[400px] h-[400px] bg-[#C9A45C]/10 rounded-full blur-[150px]" />
 
       <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#3559c7]/20 rounded-full blur-[140px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* LEFT CONTENT */}
           <div>
 
-            <p className="uppercase tracking-[5px] text-[#C9A45C] text-sm font-semibold mb-6">
+            <p className="text-[#C9A45C] text-sm md:text-lg font-bold uppercase tracking-[3px] mb-4">
               Our Services
             </p>
 
-            <h1 className="font-serif leading-[1] text-[56px] md:text-[72px]">
+            <h1 className="font-serif leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-[72px]">
               Scale Locally.
               <br />
               <span className="text-[#C9A45C]">
@@ -84,59 +83,90 @@ const ServicesHero = () => {
               </span>
             </h1>
 
-            <p className="mt-8 text-lg text-gray-300 max-w-xl leading-8">
+            <p className="mt-6 md:mt-8 text-base md:text-lg text-gray-300 max-w-xl leading-7 md:leading-8">
               From marketplace management and catalog optimization
               to international expansion, we help brands unlock
               sustainable growth across leading eCommerce platforms
               and global marketplaces.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-10">
-            <Link
-              to="/pricing"
-              className="inline-flex items-center justify-center bg-[#C9A45C] text-[#071B3B] px-8 py-4 rounded-full font-semibold hover:bg-[#d6b36f] transition-all duration-300 shadow-lg"
-            >
-              View Pricing Plans
-            </Link>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-10">
+
+              <Link
+                to="/pricing"
+                className="inline-flex items-center justify-center bg-[#C9A45C] text-[#071B3B] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-[#d6b36f] transition-all duration-300 shadow-lg"
+              >
+                View Pricing Plans
+              </Link>
+
+              <a
+                href="/brochure.pdf"
+                download
+                className="inline-flex items-center justify-center border border-white/20 bg-white/10 backdrop-blur-sm px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
+              >
+                Download Brochure
+              </a>
 
             </div>
 
+            {/* Mobile Logo Grid */}
+            <div className="grid grid-cols-4 gap-3 mt-10 lg:hidden">
+              {platforms.map((platform) => (
+                <div
+                  key={platform.name}
+                  className="bg-white rounded-xl p-2 flex items-center justify-center h-14"
+                >
+                  <img
+                    src={platform.logo}
+                    alt={platform.name}
+                    className="max-h-8 object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+
           </div>
+                    {/* RIGHT VISUAL */}
+          <div className="relative mt-12 lg:mt-0 hidden lg:flex justify-center items-center">
 
-          {/* RIGHT VISUAL */}
-          <div className="relative hidden lg:flex justify-center items-center">
-          <div
-            className="
-              absolute
-              w-[500px]
-              h-[500px]
-              rounded-full
-              border
-              border-white/50
-              orbit-clockwise
-              shadow-[0_0_40px_rgba(255,255,255,0.03)]
-            "
-          ></div>
+            {/* Orbit Circle 1 */}
+            <div
+              className="
+                absolute
+                hidden lg:block
+                w-[500px]
+                h-[500px]
+                rounded-full
+                border
+                border-white/50
+                orbit-clockwise
+                shadow-[0_0_40px_rgba(255,255,255,0.03)]
+              "
+            ></div>
 
-          <div
-            className="
-              absolute
-              w-[380px]
-              h-[380px]
-              rounded-full
-              border
-              border-white/80
-              orbit-anticlockwise
-              shadow-[0_0_20px_rgba(255,255,255,0.02)]
-            "
-          ></div>
+            {/* Orbit Circle 2 */}
+            <div
+              className="
+                absolute
+                hidden lg:block
+                w-[380px]
+                h-[380px]
+                rounded-full
+                border
+                border-white/80
+                orbit-anticlockwise
+                shadow-[0_0_20px_rgba(255,255,255,0.02)]
+              "
+            ></div>
 
+            {/* Inner Circle */}
             <div className="absolute w-[380px] h-[380px] rounded-full border border-white/5"></div>
 
             {/* Center Glow */}
             <div className="absolute w-[220px] h-[220px] bg-[#C9A45C]/15 rounded-full blur-[80px]" />
 
-            {/* Logo Orbit */}
+            {/* Orbit Logos */}
             <div className="relative w-[520px] h-[520px]">
 
               {platforms.map((platform) => (
@@ -159,7 +189,6 @@ const ServicesHero = () => {
           </div>
 
         </div>
-
       </div>
     </section>
   );

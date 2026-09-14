@@ -12,7 +12,7 @@ const About = () => {
 
           <div>
 
-            <p className="uppercase tracking-[4px] text-[#3559c7] text-sm font-semibold mb-8">
+            <p className="text-[#C9A45C] text-xl md:text-2l font-bold uppercase tracking-[3px] mb-4">
               About Us
             </p>
 

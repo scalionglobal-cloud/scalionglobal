@@ -12,7 +12,7 @@ const AboutCTA = () => {
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center relative">
 
-        <span className="uppercase tracking-[4px] text-[#C9A45C] text-sm font-semibold">
+        <span className="text-[#C9A45C] text-xl md:text-2xl font-bold uppercase tracking-[3px] mb-4">
           Let's Build Together
         </span>
 
