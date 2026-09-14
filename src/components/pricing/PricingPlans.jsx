@@ -222,8 +222,7 @@ const PricingPlans = () => {
 
                       I am interested in the ${plan.name} Plan.
 
-                      Please share:
-                      ✅ Plan details
+                      Please share: Plan details
 
                       Thank you.`
                   )}`}
