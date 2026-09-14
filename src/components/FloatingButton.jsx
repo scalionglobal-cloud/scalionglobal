@@ -7,25 +7,26 @@ const FloatingButton = () => {
 
       {/* Download Brochure */}
       <a
-        href="/brochure.pdf"
-        download
-        className="
-          floating-btn
-          w-14 h-14
-          rounded-full
-          bg-[#C9A45C]
-          text-white
-          flex items-center
-          justify-center
-          shadow-xl
-          hover:scale-110
-          transition-all
-          duration-300
-        "
-        title="Download Brochure"
-      >
-        <FaFilePdf size={24} />
-      </a>
+          href="/brochure.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            floating-btn
+            w-14 h-14
+            rounded-full
+            bg-[#C9A45C]
+            text-white
+            flex items-center
+            justify-center
+            shadow-xl
+            hover:scale-110
+            transition-all
+            duration-300
+          "
+          title="Download Brochure"
+        >
+          <FaFilePdf size={24} />
+        </a>
 
       {/* WhatsApp */}
       <a
